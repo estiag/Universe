@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function puzzle2011(initial, target) {
+            var operations = {
+        'left':['+7','/2'],
+        'right':['*3', '-5']
+        }
+            function addstate(ops, pos, index) {
+                for(var i=0; i<ops.length; i++) {
+                    var op = ops[i];
+                    if(op == state.op) continue;
+                    var num = eval(state.num + op);
+                    if(parseInt(num)!=num) continue;
+                    status.push({pos:pos, op:op, num:num, previous:index, step:state.step+1});
+                    if(status.length%10000==0) document.title = state.step +' / '+ status.length;
+                    if(num==target && pos=='right') {
+                        answer();
+                        return true;
+                    }
+                }
+            }
+            function answer() {
+                var state = status[status.length-1];
+                var prefix = state.step +' / '+ status.length + ':n';
+                var result = '= ' + target;
+                do {
+                    result = (state.op||initial) + ' ' + result;
+                } while(state = status[state.previous]);
+                alert(prefix + result)
+            }
+            var status = [{num:initial, pos:'left', step:0}];
+            for(var i=0; i<status.length; i++) {
+                var state = status[i];
+                var ops = operations[state.pos];
+                if(ops) {
+                    if(addstate(ops, 'middle', i)) return;
+                } else {
+                    if(addstate(operations['left'], 'left', i)) return;
+                    if(addstate(operations['right'], 'right', i)) return;
+                }
+            }
+        }
+        puzzle2011(2011,2012);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9396,        287]
+NotebookOptionsPosition[      8179,        239]
+NotebookOutlinePosition[      8593,        257]
+CellTagsIndexPosition[      8550,        254]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8261741426960936`*^9, 3.8261741512019444`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\:666e\:901aSelect", "Subsubsection",
+ CellChangeTimes->{{3.826001479115135*^9, 3.82600151086331*^9}, {
+   3.826147333394375*^9, 3.8261473345674925`*^9}, 3.826158047149662*^9, {
+   3.8261680285657134`*^9, 3.826168032422099*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"RandomReal", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", "100000"}], "]"}], ",", 
+     RowBox[{
+      RowBox[{"#", ">", "0"}], "&"}]}], "]"}], "//", "Length"}], "//", 
+  "AbsoluteTiming", 
+  RowBox[{"(*", "\:82b1\:8d39\:8f83\:957f\:65f6\:95f4", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.826168040820939*^9, 3.826168130522908*^9}, {
+  3.826169936501765*^9, 3.826169979200223*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8261710082016706`*^9, 3.8261710292797785`*^9}, 
+   3.826171066310481*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:8fdb\:5ea6\:6761\:51fd\:6570(\:9002\:7528\:4e8e\:5177\:6709\:663e\
+\:6027\:53d8\:91cf\:7684\:60c5\:51b5)", "Subsubsection",
+ CellChangeTimes->{{3.8261702835472555`*^9, 3.8261702849122553`*^9}, {
+  3.826170409013255*^9, 3.826170428940255*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ProgressIndicator", "[", 
+  RowBox[{"12", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "100"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8261702906362553`*^9, 3.826170313276255*^9}, {
+  3.826173682004029*^9, 3.826173698395668*^9}}],
+
+Cell[BoxData[
+ ProgressIndicatorBox[12, {0, 100}]], "Output",
+ CellChangeTimes->{3.8261703138332553`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"ProgressIndicator", "[", 
+    RowBox[{"n", ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "100"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "0", ",", "100"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.826170343684255*^9, 3.8261703614032555`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 44.1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], 0, 100}}, Typeset`size$$ = {260., {3., 13.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`n$32491$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$32491$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      ProgressIndicator[$CellContext`n$$, {0, 100}], 
+      "Specifications" :> {{$CellContext`n$$, 0, 100}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{335., {61., 70.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8261703620702553`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Monitor\:51fd\:6570\:548c\:8fdb\:5ea6\:6761\:7ed3\:5408", \
+"Subsubsection",
+ CellChangeTimes->{{3.826174075262351*^9, 3.826174078907715*^9}, {
+  3.8261743226540875`*^9, 3.826174330021824*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Monitor", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pause", "[", "0.5", "]"}], ";", "n"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "2"}], "}"}]}], "]"}], ",", "n"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.826174045621387*^9, 3.826174048039629*^9}, {
+  3.826174084728297*^9, 3.826174113775202*^9}, {3.8261741647402973`*^9, 
+  3.826174237457569*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "1", ",", "2"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8261740973185563`*^9, 3.8261741175875826`*^9}, {
+  3.8261741811499386`*^9, 3.8261742394817715`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Monitor", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pause", "[", "0.5", "]"}], ";", "n"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "10"}], "}"}]}], "]"}], ",", 
+   RowBox[{"ProgressIndicator", "[", 
+    RowBox[{"n", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "10"}], "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.8261742577065935`*^9, {3.826174303835206*^9, 3.8261743142162437`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", "8", 
+   ",", "9", ",", "10"}], "}"}]], "Output",
+ CellChangeTimes->{3.8261743200028224`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:81ea\:5b9a\:4e49Select", "Subsubsection",
+ CellChangeTimes->{{3.8261708502748795`*^9, 3.826170856252477*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"SelectWithPregress", "[", 
+    RowBox[{"list_", ",", "condition_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"n", "=", "0"}], ",", "result"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Monitor", "[", 
+      RowBox[{
+       RowBox[{"Select", "[", 
+        RowBox[{"list", ",", 
+         RowBox[{"Function", "[", 
+          RowBox[{"x", ",", 
+           RowBox[{
+            RowBox[{"n", "++"}], ";", 
+            RowBox[{"condition", "[", "x", "]"}]}]}], "]"}]}], "]"}], ",", 
+       RowBox[{"ProgressIndicator", "[", 
+        RowBox[{"n", ",", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", 
+           RowBox[{"Length", "@", "list"}]}], "}"}]}], "]"}]}], "]"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.82617086158001*^9, 3.8261709250473557`*^9}, {
+   3.8261709737972307`*^9, 3.826170983907242*^9}, {3.826171075460396*^9, 
+   3.826171120091859*^9}, {3.8261711576166105`*^9, 3.826171161943043*^9}, {
+   3.8261712266485133`*^9, 3.8261713151393614`*^9}, {3.8261714282486715`*^9, 
+   3.8261714463134775`*^9}, {3.8261715741562605`*^9, 
+   3.8261716970475483`*^9}, {3.826172530587894*^9, 3.826172563629198*^9}, {
+   3.8261726091507497`*^9, 3.826172615085343*^9}, 3.8261726542842627`*^9, {
+   3.8261732993116455`*^9, 3.826173415649646*^9}, {3.8261734479676456`*^9, 
+   3.8261734945686455`*^9}, {3.8261736206068897`*^9, 3.826173673425171*^9}, {
+   3.8261738886876955`*^9, 3.826173900949921*^9}, {3.8261743640992317`*^9, 
+   3.8261743933021517`*^9}, {3.8261744331341343`*^9, 3.8261744458924103`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"SelectWithPregress", "[", 
+  RowBox[{
+   RowBox[{"RandomReal", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", "100000"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"#", ">", "0"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.826172573526188*^9, 3.8261725897838135`*^9}, {
+  3.826174465553376*^9, 3.826174519136734*^9}}]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1600, 826},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>1.3 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (2016\:5e7410\:67088\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 146, 2, 59, "Input"],
+Cell[CellGroupData[{
+Cell[729, 26, 234, 3, 43, "Subsubsection"],
+Cell[966, 31, 536, 15, 59, "Input"],
+Cell[1505, 48, 122, 2, 39, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1664, 55, 250, 3, 43, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[1939, 62, 262, 6, 59, "Input"],
+Cell[2204, 70, 105, 2, 39, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2346, 77, 340, 9, 59, "Input"],
+Cell[2689, 88, 1593, 33, 152, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4331, 127, 199, 3, 43, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[4555, 134, 437, 12, 59, "Input"],
+Cell[4995, 148, 206, 4, 39, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5238, 157, 488, 14, 59, "Input"],
+Cell[5729, 173, 205, 5, 39, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5983, 184, 117, 1, 43, "Subsubsection"],
+Cell[6103, 187, 1658, 36, 134, "Input"],
+Cell[7764, 225, 399, 11, 59, "Input"]
+}, Open  ]]
+}
+]
+*)
+

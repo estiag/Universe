@@ -1,0 +1,146 @@
+{
+  "main": {
+    "id": "d4de1ccf6abe2d5c",
+    "type": "split",
+    "children": [
+      {
+        "id": "87b56669b96c3213",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c19c8e2ac2977c3c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "计算机/计算机网络/物理层.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8ce22a9aaa78337f",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bd6f549d79f94c15",
+    "type": "split",
+    "children": [
+      {
+        "id": "7f79ddc921478782",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ec4d518fd2410b67",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1beac91fbeef8753",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 244.5
+  },
+  "right": {
+    "id": "2267a0cc5407e146",
+    "type": "split",
+    "children": [
+      {
+        "id": "0090001779cbfbff",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c35ec8e8029908b0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "d60c8822d2e7e5c1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ee14802f6d44ce5b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "fed806af01a224ea",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "active": "8ce22a9aaa78337f",
+  "lastOpenFiles": [
+    "计算机/计算机网络/应用层.md",
+    "计算机/计算机网络/物理层.md",
+    "计算机/计算机网络/码间串扰.md",
+    "计算机/编程语言/python/python问题/pip安装出现ssl错误.md",
+    "计算机/编程语言/js/Js问题/函数节流与防抖.md",
+    "计算机/编程语言/js/Js问题/jQuery选中checkbox.md",
+    "计算机/数据库/Elasticsearch/ES API CURL.md",
+    "计算机/数据库/Elasticsearch/Elasticsearch.md",
+    "计算机/数据库/Postgres/备份恢复.md",
+    "计算机/数据库/Postgres/查询.md"
+  ]
+}

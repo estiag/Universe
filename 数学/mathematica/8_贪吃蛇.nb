@@ -1,0 +1,688 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28437,        680]
+NotebookOptionsPosition[     27582,        646]
+NotebookOutlinePosition[     27996,        664]
+CellTagsIndexPosition[     27953,        661]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8263460224206214`*^9, 3.826346030969476*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "\:5b9a\:4e49\:4e0a\:4e0b\:5de6\:53f3\:65b9\:5411", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"size", " ", "=", " ", "20"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"right", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"left", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"up", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"down", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.8263460447908583`*^9, 3.826346160643442*^9}, {
+   3.8263464629416695`*^9, 3.8263465026386385`*^9}, {3.8263465498153553`*^9, 
+   3.8263465740087748`*^9}, {3.826346614437817*^9, 3.8263466194233155`*^9}, {
+   3.8263466570450773`*^9, 3.826346673150688*^9}, {3.8263468504674177`*^9, 
+   3.826346880429414*^9}, {3.8263469179181623`*^9, 3.8263469196483355`*^9}, {
+   3.826346949769347*^9, 3.826347000022372*^9}, {3.8266662272580204`*^9, 
+   3.8266662317590203`*^9}, {3.8266662690060205`*^9, 
+   3.8266662701060205`*^9}, {3.8266665070699244`*^9, 
+   3.8266665172009373`*^9}, {3.826666607868003*^9, 3.8266666334545617`*^9}, {
+   3.826666700870302*^9, 3.826666779302145*^9}, 3.826666810473262*^9, {
+   3.826681470041105*^9, 3.8266814895260534`*^9}, {3.8266845232159314`*^9, 
+   3.8266845270029316`*^9}, {3.8266911733233547`*^9, 3.826691179523975*^9}, {
+   3.8266913118122025`*^9, 3.826691330623083*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "\:8c03\:7528\:79fb\:52a8\:51fd\:6570", "\:ff0c", 
+    "\:86c7\:5c31\:5f80direction\:79fb\:52a8\:4e00\:683c"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Move", "[", 
+      RowBox[{"snake_", ",", "direction_"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", "result", "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"result", " ", "=", " ", 
+         RowBox[{"snake", " ", "//", "Rest"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"AppendTo", "[", 
+         RowBox[{"result", ",", 
+          RowBox[{
+           RowBox[{"Last", "@", "snake"}], "+", "direction"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", "result"}]}], "\[IndentingNewLine]", "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", "\:8ba9\:86c7\:5411\:4e0b\:79fb\:52a8", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SparseArray", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Move", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"5", ",", "5"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"5", ",", "6"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"5", ",", "7"}], "}"}]}], "}"}], ",", "down"}], "]"}], 
+       "\[Rule]", "1"}], ",", "size"}], "]"}], "//", 
+    RowBox[{
+     RowBox[{"ArrayPlot", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"Mesh", "\[Rule]", "True"}]}], "]"}], "&"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.8263465141227865`*^9, 3.8263465202584*^9}, {
+   3.826346584441818*^9, 3.8263465865250263`*^9}, 3.8266635385260925`*^9, {
+   3.826666541994416*^9, 3.826666557805998*^9}, {3.826666628657082*^9, 
+   3.826666652504466*^9}, 3.826666703204536*^9, {3.826681536607761*^9, 
+   3.8266815372058206`*^9}, {3.826684531376931*^9, 3.8266845323809314`*^9}, {
+   3.8266911760976324`*^9, 3.826691176814704*^9}, {3.8266913176127825`*^9, 
+   3.8266913288679075`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   RasterBox[SparseArray[
+    Automatic, {20, 20}, 1, {
+     1, {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 3, 3, 3, 3}, {{
+       7}, {6}, {7}}}, {0, 0, 0}}], {{0, 0}, {20, 20}}, {0, 1}], {
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 20}, {20, 20}}, {{0, 19}, {20, 19}}, {{0, 18}, {20, 
+       18}}, {{0, 17}, {20, 17}}, {{0, 16}, {20, 16}}, {{0, 15}, {20, 15}}, {{
+       0, 14}, {20, 14}}, {{0, 13}, {20, 13}}, {{0, 12}, {20, 12}}, {{0, 
+       11}, {20, 11}}, {{0, 10}, {20, 10}}, {{0, 9}, {20, 9}}, {{0, 8}, {20, 
+       8}}, {{0, 7}, {20, 7}}, {{0, 6}, {20, 6}}, {{0, 5}, {20, 5}}, {{0, 
+       4}, {20, 4}}, {{0, 3}, {20, 3}}, {{0, 2}, {20, 2}}, {{0, 1}, {20, 
+       1}}, {{0, 0}, {20, 0}}}],
+      Antialiasing->False]}, 
+    {GrayLevel[
+      NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+     StyleBox[
+      LineBox[{{{0, 0}, {0, 20}}, {{1, 0}, {1, 20}}, {{2, 0}, {2, 20}}, {{3, 
+       0}, {3, 20}}, {{4, 0}, {4, 20}}, {{5, 0}, {5, 20}}, {{6, 0}, {6, 
+       20}}, {{7, 0}, {7, 20}}, {{8, 0}, {8, 20}}, {{9, 0}, {9, 20}}, {{10, 
+       0}, {10, 20}}, {{11, 0}, {11, 20}}, {{12, 0}, {12, 20}}, {{13, 0}, {13,
+        20}}, {{14, 0}, {14, 20}}, {{15, 0}, {15, 20}}, {{16, 0}, {16, 
+       20}}, {{17, 0}, {17, 20}}, {{18, 0}, {18, 20}}, {{19, 0}, {19, 20}}, {{
+       20, 0}, {20, 20}}}],
+      Antialiasing->False]}}},
+  Frame->False,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+    Automatic}]], "Output",
+ CellChangeTimes->{
+  3.82666656052627*^9, {3.8266666584660625`*^9, 3.826666670130229*^9}, 
+   3.8266667237025857`*^9, 3.826666814416656*^9, 3.8266815383659363`*^9, 
+   3.8266845353299313`*^9, 3.8266913355755787`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "(*", "\:7528\:7bad\:5934\:63a7\:5236\:86c7\:7684\:79fb\:52a8", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"DynamicModule", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"snake", " ", "=", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"5", ",", "5"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"5", ",", "6"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"5", ",", "7"}], "}"}]}], "}"}]}], "}"}], ",", 
+    RowBox[{"EventHandler", "[", 
+     RowBox[{
+      RowBox[{"Dynamic", "[", 
+       RowBox[{
+        RowBox[{"SparseArray", "[", 
+         RowBox[{
+          RowBox[{"snake", "\[Rule]", "1"}], ",", "size"}], "]"}], "//", 
+        RowBox[{
+         RowBox[{"ArrayPlot", "[", 
+          RowBox[{"#", ",", 
+           RowBox[{"Mesh", "\[Rule]", "True"}]}], "]"}], "&"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<LeftArrowKeyDown\>\"", "\[RuleDelayed]", 
+         RowBox[{"{", 
+          RowBox[{"snake", " ", "=", " ", 
+           RowBox[{"Move", "[", 
+            RowBox[{"snake", ",", "left"}], "]"}]}], "}"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"\"\<RightArrowKeyDown\>\"", "\[RuleDelayed]", 
+         RowBox[{"{", 
+          RowBox[{"snake", " ", "=", " ", 
+           RowBox[{"Move", "[", 
+            RowBox[{"snake", ",", "right"}], "]"}]}], "}"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"\"\<UpArrowKeyDown\>\"", "\[RuleDelayed]", 
+         RowBox[{"{", 
+          RowBox[{"snake", " ", "=", " ", 
+           RowBox[{"Move", "[", 
+            RowBox[{"snake", ",", "up"}], "]"}]}], "}"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"\"\<DownArrowKeyDown\>\"", "\[RuleDelayed]", 
+         RowBox[{"{", 
+          RowBox[{"snake", " ", "=", " ", 
+           RowBox[{"Move", "[", 
+            RowBox[{"snake", ",", "down"}], "]"}]}], "}"}]}]}], "}"}]}], 
+     "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.826347349860352*^9, 3.826347419296295*^9}, {
+   3.826347453219687*^9, 3.8263476015605197`*^9}, {3.826347694713834*^9, 
+   3.8263477397033324`*^9}, {3.8263478226096225`*^9, 3.826347825622924*^9}, {
+   3.8263478703944006`*^9, 3.826347929627323*^9}, {3.8266635493308506`*^9, 
+   3.826663554073427*^9}, {3.826663602975752*^9, 3.8266636105416794`*^9}, {
+   3.826663657936198*^9, 3.8266636844348974`*^9}, {3.8266637330161796`*^9, 
+   3.826663793546071*^9}, {3.82666629597902*^9, 3.8266663619160204`*^9}, {
+   3.8266663959080205`*^9, 3.82666647666302*^9}, {3.826666569902207*^9, 
+   3.826666580080225*^9}, {3.8266668374729614`*^9, 3.82666689726694*^9}, {
+   3.8266814981329136`*^9, 3.826681500007101*^9}, {3.8266845399909315`*^9, 
+   3.8266845411719313`*^9}, 3.8266859718412495`*^9}],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`snake$$ = {{1, 10}, {1, 11}, {1, 12}}}, 
+  TagBox[
+   DynamicBox[ToBoxes[
+     (ArrayPlot[#, Mesh -> True]& )[
+      SparseArray[$CellContext`snake$$ -> 1, $CellContext`size]], 
+     StandardForm],
+    ImageSizeCache->{468., {230., 237.}}],
+   EventHandlerTag[{
+    "LeftArrowKeyDown" :> {$CellContext`snake$$ = \
+$CellContext`Move[$CellContext`snake$$, $CellContext`left]}, 
+     "RightArrowKeyDown" :> {$CellContext`snake$$ = \
+$CellContext`Move[$CellContext`snake$$, $CellContext`right]}, 
+     "UpArrowKeyDown" :> {$CellContext`snake$$ = \
+$CellContext`Move[$CellContext`snake$$, $CellContext`up]}, 
+     "DownArrowKeyDown" :> {$CellContext`snake$$ = \
+$CellContext`Move[$CellContext`snake$$, $CellContext`down]}, Method -> 
+     "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{
+  3.826347590683432*^9, {3.8263476969530582`*^9, 3.82634770927429*^9}, 
+   3.8263477437307353`*^9, 3.826347826256987*^9, {3.8263478747438354`*^9, 
+   3.8263479105694175`*^9}, 3.8266636286430583`*^9, {3.826663660298726*^9, 
+   3.8266636852437363`*^9}, {3.8266637470993624`*^9, 3.8266637940869627`*^9}, 
+   3.8266662501610203`*^9, {3.8266662995690203`*^9, 3.8266663632470207`*^9}, 
+   3.8266664083300204`*^9, {3.82666646148602*^9, 3.8266664879080205`*^9}, 
+   3.826666520359253*^9, {3.826666845968811*^9, 3.8266668496451783`*^9}, 
+   3.826666882594473*^9, 3.826678777935912*^9, 3.826681540348135*^9, 
+   3.826682759314019*^9, 3.8266845426699314`*^9, 3.8266913396279836`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "\:751f\:6210\:98df\:7269\:70b9", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"foods", "=", " ", 
+     RowBox[{"RandomChoice", "[", 
+      RowBox[{
+       RowBox[{"Complement", "[", 
+        RowBox[{
+         RowBox[{"Join", " ", "@@", " ", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"i", ",", "j"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", "size"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"j", ",", "size"}], "}"}]}], "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"5", ",", "5"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"5", ",", "6"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"5", ",", "7"}], "}"}]}], "}"}]}], "]"}], ",", "10"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"DynamicModule", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"snake", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"5", ",", "5"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"5", ",", "6"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"5", ",", "7"}], "}"}]}], "}"}]}], "}"}], ",", 
+     RowBox[{"EventHandler", "[", 
+      RowBox[{
+       RowBox[{"Dynamic", "[", 
+        RowBox[{
+         RowBox[{"SparseArray", "[", 
+          RowBox[{
+           RowBox[{"Union", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"Rule", "[", 
+                RowBox[{"#", ",", "1"}], "]"}], "&"}], " ", "/@", " ", 
+              "foods"}], ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Rule", "[", 
+                RowBox[{"#", ",", "2"}], "]"}], "&"}], " ", "/@", " ", 
+              "snake"}]}], "]"}], ",", "size"}], "]"}], "//", 
+         RowBox[{
+          RowBox[{"ArrayPlot", "[", 
+           RowBox[{"#", ",", 
+            RowBox[{"Mesh", "\[Rule]", "True"}]}], "]"}], "&"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\"\<LeftArrowKeyDown\>\"", "\[RuleDelayed]", 
+          RowBox[{"{", 
+           RowBox[{"snake", " ", "=", " ", 
+            RowBox[{"Move", "[", 
+             RowBox[{"snake", ",", "left"}], "]"}]}], "}"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<RightArrowKeyDown\>\"", "\[RuleDelayed]", 
+          RowBox[{"{", 
+           RowBox[{"snake", " ", "=", " ", 
+            RowBox[{"Move", "[", 
+             RowBox[{"snake", ",", "right"}], "]"}]}], "}"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<UpArrowKeyDown\>\"", "\[RuleDelayed]", 
+          RowBox[{"{", 
+           RowBox[{"snake", " ", "=", " ", 
+            RowBox[{"Move", "[", 
+             RowBox[{"snake", ",", "up"}], "]"}]}], "}"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<DownArrowKeyDown\>\"", "\[RuleDelayed]", 
+          RowBox[{"{", 
+           RowBox[{"snake", " ", "=", " ", 
+            RowBox[{"Move", "[", 
+             RowBox[{"snake", ",", "down"}], "]"}]}], "}"}]}]}], "}"}]}], 
+      "]"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8266829212232084`*^9, 3.8266830442775126`*^9}, {
+   3.826683191457229*^9, 3.826683208018885*^9}, {3.8266835485859385`*^9, 
+   3.8266835811411934`*^9}, {3.8266836157716565`*^9, 
+   3.8266836568267612`*^9}, {3.8266837274638243`*^9, 3.826683771250203*^9}, {
+   3.8266838088649635`*^9, 3.826683820383116*^9}, {3.8266842685809317`*^9, 
+   3.8266842818229313`*^9}, 3.8266844998189316`*^9, {3.8266845694269314`*^9, 
+   3.8266845704079313`*^9}, {3.8266846201399317`*^9, 3.826684622303931*^9}, 
+   3.8266859773367987`*^9, {3.8266913948978972`*^9, 3.826691395517897*^9}, 
+   3.8267497903228345`*^9}],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`snake$$ = {{5, 5}, {5, 6}, {5, 7}}}, 
+  TagBox[
+   DynamicBox[ToBoxes[
+     (ArrayPlot[#, Mesh -> True]& )[
+      SparseArray[
+       Union[
+        Map[# -> 1& , $CellContext`foods], 
+        Map[# -> 2& , $CellContext`snake$$]], $CellContext`size]], 
+     StandardForm],
+    ImageSizeCache->{468., {230., 237.}}],
+   EventHandlerTag[{
+    "LeftArrowKeyDown" :> {$CellContext`snake$$ = \
+$CellContext`Move[$CellContext`snake$$, $CellContext`left]}, 
+     "RightArrowKeyDown" :> {$CellContext`snake$$ = \
+$CellContext`Move[$CellContext`snake$$, $CellContext`right]}, 
+     "UpArrowKeyDown" :> {$CellContext`snake$$ = \
+$CellContext`Move[$CellContext`snake$$, $CellContext`up]}, 
+     "DownArrowKeyDown" :> {$CellContext`snake$$ = \
+$CellContext`Move[$CellContext`snake$$, $CellContext`down]}, Method -> 
+     "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{
+  3.8266835517472544`*^9, 3.8266835818802676`*^9, {3.826683627198799*^9, 
+   3.8266836574598246`*^9}, 3.8266837337024484`*^9, {3.8266837656886463`*^9, 
+   3.8266837717192497`*^9}, 3.8266838208331604`*^9, {3.8266842730179315`*^9, 
+   3.8266842824159317`*^9}, 3.826684500942931*^9, {3.8266845731039314`*^9, 
+   3.8266845865209312`*^9}, 3.8266846230599318`*^9, 3.8266913684108615`*^9, 
+   3.826691400966897*^9, 3.8267497916425705`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+  "\:91cd\:5199Move\:51fd\:6570", "\:ff0c", 
+   "\:5224\:65ad\:662f\:5426\:5403\:5230\:98df\:7269"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.8266858147805448`*^9, 3.826685833393406*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"snake", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"5", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "7"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"foods", " ", "=", " ", 
+   RowBox[{"RandomChoice", "[", 
+    RowBox[{
+     RowBox[{"Complement", "[", 
+      RowBox[{
+       RowBox[{"Join", " ", "@@", " ", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"i", ",", "j"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "size"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"j", ",", "size"}], "}"}]}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"5", ",", "5"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"5", ",", "6"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"5", ",", "7"}], "}"}]}], "}"}]}], "]"}], ",", "10"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Move", "[", 
+    RowBox[{"snake_", ",", "foods_", ",", "direction_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"snake2", "=", "snake"}], ",", "nextBlock", ",", 
+       RowBox[{"foods2", " ", "=", " ", "foods"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"nextBlock", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"Last", "@", "snake"}], "+", "direction"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"foods2", 
+          StyleBox["\[Intersection]", "OperatorCharacter"], 
+          StyleBox[
+           RowBox[{"{", "nextBlock", "}"}], "OperatorCharacter"]}], "==", " ", 
+         RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"snake2", " ", "=", " ", 
+         RowBox[{"snake", " ", "//", "Rest"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"foods2", " ", "=", " ", 
+          RowBox[{"Delete", "[", 
+           RowBox[{"foods2", ",", 
+            RowBox[{"Position", "[", 
+             RowBox[{"foods2", ",", "nextBlock"}], "]"}]}], "]"}]}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"snake2", ",", "nextBlock"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"snake2", ",", "foods2"}], "}"}]}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DynamicModule", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"snake", " ", "=", " ", "snake"}], ",", 
+     RowBox[{"foods", "=", "foods"}], ",", 
+     RowBox[{"map", "=", " ", 
+      RowBox[{"SparseArray", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "1"}], "}"}], "\[Rule]", "0"}], ",", "size"}], 
+       "]"}]}], ",", "result"}], " ", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"EventHandler", "[", 
+    RowBox[{
+     RowBox[{"Dynamic", "[", " ", 
+      RowBox[{
+       RowBox[{"ReplacePart", "[", 
+        RowBox[{"map", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"snake", "\[Rule]", "2"}], ",", 
+           RowBox[{"foods", "\[Rule]", " ", "1"}]}], "}"}]}], "]"}], "//", 
+       RowBox[{
+        RowBox[{"ArrayPlot", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"Mesh", "\[Rule]", "True"}]}], "]"}], "&"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\"\<LeftArrowKeyDown\>\"", "\[RuleDelayed]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"result", " ", "=", " ", 
+           RowBox[{"Move", "[", 
+            RowBox[{"snake", ",", "foods", ",", "left"}], "]"}]}], ";", 
+          RowBox[{"snake", "=", 
+           RowBox[{"result", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+          RowBox[{"foods", " ", "=", " ", 
+           RowBox[{"result", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<RightArrowKeyDown\>\"", "\[RuleDelayed]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"result", " ", "=", " ", 
+           RowBox[{"Move", "[", 
+            RowBox[{"snake", ",", "foods", ",", "right"}], "]"}]}], ";", 
+          RowBox[{"snake", "=", 
+           RowBox[{"result", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+          RowBox[{"foods", " ", "=", " ", 
+           RowBox[{"result", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<UpArrowKeyDown\>\"", "\[RuleDelayed]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"result", " ", "=", " ", 
+           RowBox[{"Move", "[", 
+            RowBox[{"snake", ",", "foods", ",", "up"}], "]"}]}], ";", 
+          RowBox[{"snake", "=", 
+           RowBox[{"result", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+          RowBox[{"foods", " ", "=", " ", 
+           RowBox[{"result", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<DownArrowKeyDown\>\"", "\[RuleDelayed]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"result", " ", "=", " ", 
+           RowBox[{"Move", "[", 
+            RowBox[{"snake", ",", "foods", ",", "down"}], "]"}]}], ";", 
+          RowBox[{"snake", "=", 
+           RowBox[{"result", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+          RowBox[{"foods", " ", "=", " ", 
+           RowBox[{"result", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "}"}]}]}], "}"}]}], 
+    "\[IndentingNewLine]", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.826685888210887*^9, 3.826685888423908*^9}, 
+   3.826685980976163*^9, {3.826686040787143*^9, 3.826686118295893*^9}, {
+   3.8266861527723403`*^9, 3.826686163774441*^9}, {3.8266862129343557`*^9, 
+   3.826686224782541*^9}, {3.82668644819788*^9, 3.8266864682898893`*^9}, {
+   3.826686558978957*^9, 3.8266866040574646`*^9}, {3.8266866821662745`*^9, 
+   3.8266867057346315`*^9}, {3.8266879798639145`*^9, 
+   3.8266880120509143`*^9}, {3.8266880479189143`*^9, 3.8266880497699146`*^9}, 
+   3.826688108360914*^9, {3.8266881696589146`*^9, 3.8266881937549143`*^9}, {
+   3.826688447349785*^9, 3.8266884714001894`*^9}, {3.826688682601308*^9, 
+   3.826688715419589*^9}, {3.826688753553402*^9, 3.8266888030873547`*^9}, {
+   3.8266890987559185`*^9, 3.826689114412484*^9}, {3.82668915917196*^9, 
+   3.82668916597464*^9}, {3.826689235399582*^9, 3.8266892479468365`*^9}, {
+   3.826689313247366*^9, 3.8266893402890697`*^9}, {3.82668938489753*^9, 
+   3.8266893905860987`*^9}, {3.8266895230603447`*^9, 
+   3.8266895309351325`*^9}, {3.8266895706231008`*^9, 
+   3.8266896314851866`*^9}, {3.8266896942904663`*^9, 
+   3.8266897361176486`*^9}, {3.8266898488379197`*^9, 
+   3.8266899617912135`*^9}, {3.826690025320566*^9, 3.8266900335793915`*^9}, {
+   3.826690122356269*^9, 3.826690189514984*^9}, {3.826690245357568*^9, 
+   3.8266902576117926`*^9}, {3.82669045980801*^9, 3.8266905034633756`*^9}, {
+   3.826690606645693*^9, 3.8266907149465218`*^9}, {3.8266907592519517`*^9, 
+   3.8266907912951555`*^9}, {3.8266908270307293`*^9, 3.826690906726698*^9}, {
+   3.8266909436153865`*^9, 3.826690944712496*^9}, {3.8266909887458987`*^9, 
+   3.826691023972421*^9}, {3.8266910690359273`*^9, 3.826691147761799*^9}, {
+   3.8266912555895805`*^9, 3.8266912601880407`*^9}, {3.8266914131668973`*^9, 
+   3.826691488636897*^9}, {3.8266915435718975`*^9, 3.8266915506918974`*^9}, {
+   3.8266916152578974`*^9, 3.826691628555897*^9}, {3.8266916810478973`*^9, 
+   3.826691686971897*^9}, {3.826691773378359*^9, 3.8266919326332827`*^9}, {
+   3.8266919881838374`*^9, 3.8266920290699253`*^9}, {3.8266920603690553`*^9, 
+   3.8266920765006685`*^9}, {3.8266921305180693`*^9, 
+   3.8266921322892466`*^9}, {3.82674974735443*^9, 3.8267497523454313`*^9}, {
+   3.8267500685331354`*^9, 3.8267500716621356`*^9}, {3.8267501854891357`*^9, 
+   3.826750192390136*^9}, {3.8267504025241356`*^9, 3.8267504410351353`*^9}, {
+   3.826750477574136*^9, 3.8267504930591354`*^9}, {3.8267505488127394`*^9, 
+   3.8267506704218993`*^9}, {3.8267510171655703`*^9, 3.826751028772731*^9}, {
+   3.8267510680746603`*^9, 3.826751127687621*^9}, {3.826751165594412*^9, 
+   3.8267511695538073`*^9}, {3.826751259672818*^9, 3.826751310284879*^9}, {
+   3.8267516689647436`*^9, 3.8267516826071076`*^9}, {3.8267518092537713`*^9, 
+   3.8267518123310785`*^9}, {3.8267519238912334`*^9, 3.82675195876272*^9}, {
+   3.8267520635441976`*^9, 3.8267520667955227`*^9}, {3.826752204110253*^9, 
+   3.826752207660608*^9}, {3.826752376347475*^9, 3.826752525254364*^9}, {
+   3.826753129443777*^9, 3.82675313727656*^9}, {3.826753651266954*^9, 
+   3.8267537022570524`*^9}}],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`snake$$ = {{3, 9}, {3, 10}, {3, 11}, {3, 
+  12}}, $CellContext`foods$$ = {{10, 17}, {16, 11}, {13, 18}, {8, 10}, {8, 
+  15}, {19, 6}, {13, 2}, {16, 9}, {18, 2}}, $CellContext`map$$ = SparseArray[
+  Automatic, {20, 20}, 0, {
+   1, {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+     0}, {}}, {}}], $CellContext`result$$ = {{{3, 9}, {3, 10}, {3, 11}, {3, 
+   12}}, {{10, 17}, {16, 11}, {13, 18}, {8, 10}, {8, 15}, {19, 6}, {13, 2}, {
+   16, 9}, {18, 2}}}}, 
+  TagBox[
+   DynamicBox[ToBoxes[
+     (ArrayPlot[#, Mesh -> True]& )[
+      ReplacePart[$CellContext`map$$, {$CellContext`snake$$ -> 
+        2, $CellContext`foods$$ -> 1}]], StandardForm],
+    ImageSizeCache->{468., {230., 237.}}],
+   EventHandlerTag[{
+    "LeftArrowKeyDown" :> {$CellContext`result$$ = \
+$CellContext`Move[$CellContext`snake$$, $CellContext`foods$$, \
+$CellContext`left]; $CellContext`snake$$ = 
+        Part[$CellContext`result$$, 1]; $CellContext`foods$$ = 
+        Part[$CellContext`result$$, 2]; Null}, 
+     "RightArrowKeyDown" :> {$CellContext`result$$ = \
+$CellContext`Move[$CellContext`snake$$, $CellContext`foods$$, \
+$CellContext`right]; $CellContext`snake$$ = 
+        Part[$CellContext`result$$, 1]; $CellContext`foods$$ = 
+        Part[$CellContext`result$$, 2]; Null}, 
+     "UpArrowKeyDown" :> {$CellContext`result$$ = \
+$CellContext`Move[$CellContext`snake$$, $CellContext`foods$$, \
+$CellContext`up]; $CellContext`snake$$ = 
+        Part[$CellContext`result$$, 1]; $CellContext`foods$$ = 
+        Part[$CellContext`result$$, 2]; Null}, 
+     "DownArrowKeyDown" :> {$CellContext`result$$ = \
+$CellContext`Move[$CellContext`snake$$, $CellContext`foods$$, \
+$CellContext`down]; $CellContext`snake$$ = 
+        Part[$CellContext`result$$, 1]; $CellContext`foods$$ = 
+        Part[$CellContext`result$$, 2]; Null}, Method -> "Preemptive", 
+     PassEventsDown -> Automatic, PassEventsUp -> True}]],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{
+  3.8267513115870094`*^9, {3.8267516699718447`*^9, 3.8267516829681435`*^9}, 
+   3.8267518132541714`*^9, {3.826751935614406*^9, 3.8267519604118853`*^9}, 
+   3.826752067746618*^9, 3.8267522081646585`*^9, 3.8267524068565254`*^9, 
+   3.8267525294517837`*^9, 3.8267531786476965`*^9, {3.8267536680246296`*^9, 
+   3.8267536878526125`*^9}}]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1600, 826},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>1.3 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (2016\:5e7410\:67088\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 144, 2, 59, "Input"],
+Cell[705, 24, 1726, 37, 165, "Input"],
+Cell[CellGroupData[{
+Cell[2456, 65, 2023, 51, 300, "Input"],
+Cell[4482, 118, 1895, 39, 486, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6414, 162, 2770, 64, 187, "Input"],
+Cell[9187, 228, 1579, 28, 486, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10803, 261, 3828, 97, 281, "Input"],
+Cell[14634, 360, 1414, 28, 486, "Output"]
+}, Open  ]],
+Cell[16063, 391, 228, 5, 39, "Input"],
+Cell[CellGroupData[{
+Cell[16316, 400, 8908, 198, 663, "Input"],
+Cell[25227, 600, 2339, 43, 486, "Output"]
+}, Open  ]]
+}
+]
+*)
+

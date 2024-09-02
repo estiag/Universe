@@ -1,0 +1,17 @@
+{
+  "attachmentFolderPath": "/",
+  "readableLineLength": true,
+  "foldHeading": true,
+  "defaultViewMode": "preview",
+  "foldIndent": true,
+  "showLineNumber": true,
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "fileSortOrder": "alphabetical",
+  "newLinkFormat": "shortest",
+  "showUnsupportedFiles": true,
+  "legacyEditor": false,
+  "livePreview": true,
+  "communityPluginSortOrder": "downloadReverse",
+  "strictLineBreaks": true
+}
