@@ -11,7 +11,7 @@
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
                 "-I",
-                "D:/eigen-3.4.0"
+                "D:/eigen-3.4.0/"
             ],
             "options": {
                 "cwd": "${fileDirname}"
